@@ -23,6 +23,15 @@ public class TestConnection {
         //getting information with column index(starts from 1)
         System.out.println(resultSet.getString(2));
 
+        // 1 - Europe
+        // 2 - Americas
+        System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+        // move to second row
+        resultSet.next();
+        System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+
+
+
         // close connection
         resultSet.close();
         statement.close();
