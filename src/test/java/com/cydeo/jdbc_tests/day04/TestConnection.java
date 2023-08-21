@@ -25,10 +25,19 @@ public class TestConnection {
 
         // 1 - Europe
         // 2 - Americas
-        System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+        //System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
         // move to second row
-        resultSet.next();
-        System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+        //resultSet.next();
+        //System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+
+
+        // 1 - Europe
+        // 2 - Americas
+        // 3 - Asia
+        // 4 - Middle East and Africa
+        while (resultSet.next()) {
+            System.out.println((resultSet.getInt(1) + " - " + resultSet.getString(2)));
+        }
 
 
 
