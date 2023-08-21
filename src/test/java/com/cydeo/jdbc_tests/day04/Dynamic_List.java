@@ -19,7 +19,7 @@ public class Dynamic_List {
 
         Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet resultSet = statement.executeQuery("select * from departments");
+        ResultSet resultSet = statement.executeQuery("select * from employees where ROWNUM < 11");
 
         // in order to get column names we need resultSetMetaData
         ResultSetMetaData rsmd = resultSet.getMetaData();
