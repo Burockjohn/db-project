@@ -19,13 +19,10 @@ public class Dynamic_List {
 
         Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet resultSet = statement.executeQuery("select * from employees where ROWNUM < 11");
+        ResultSet resultSet = statement.executeQuery("select first_name, last_name, salary from employees where ROWNUM < 11");
 
         // in order to get column names we need resultSetMetaData
         ResultSetMetaData rsmd = resultSet.getMetaData();
-
-        //move to first row
-        resultSet.next();
 
         // creating list for keeping all the rows maps
         List<Map<String, Object>> queryData = new ArrayList<>();
