@@ -28,9 +28,6 @@ from EMPLOYEES
 group by FIRST_NAME
 having count(*) > 1;
 
-select NAMES from testers
-intersect
-select NAMES from DEVELOPERS;
 
 
 
