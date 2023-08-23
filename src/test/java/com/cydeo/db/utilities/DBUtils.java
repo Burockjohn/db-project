@@ -54,7 +54,7 @@ public class DBUtils {
      *         columns of data, only first column of the first row will be returned.
      *         The rest of the data will be ignored
      */
-    public static Object getCellValue(String query) {
+    public static Object getCellValue(String query) { // ??
         return getQueryResultList(query).get(0).get(0);
     }
     /**
@@ -64,7 +64,7 @@ public class DBUtils {
      *         results in multiple rows and/or columns of data, only first row will
      *         be returned. The rest of the data will be ignored
      */
-    public static List<Object> getRowList(String query) {
+    public static List<Object> getRowList(String query) { //?
         return getQueryResultList(query).get(0);
     }
     /**
@@ -184,9 +184,15 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    public static int getRowCount() throws Exception {
-        resultSet.last();
-        int rowCount = resultSet.getRow();
+    public static int getRowCount() {
+        int rowCount = 0;
+        try {
+            resultSet.last();
+            rowCount = resultSet.getRow();
+            resultSet.beforeFirst();
+        } catch (SQLException e) {
+            System.err.println("ERROR WHILE GETTING ROW COUNT " + e.getMessage());
+        }
         return rowCount;
     }
 
