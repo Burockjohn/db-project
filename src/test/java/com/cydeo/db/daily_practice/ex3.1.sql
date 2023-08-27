@@ -4,22 +4,22 @@
 -- 2. address: Cannot be null
 -- 3. Phone: Cannot be null
 
-create table Addresses
+create table ADDRESS
 (
     address_id INTEGER primary key,
     address    varchar(100) not null,
     phone      INTEGER      not null
 );
 
-insert into Addresses(address_id, address, phone)
+insert into ADDRESS(address_id, address, phone)
 values (5, '1913 Hanoi Way', 28303384);
-insert into Addresses(address_id, address, phone)
+insert into ADDRESS(address_id, address, phone)
 values (7, '692 Joliet Street', 44847719);
-insert into Addresses(address_id, address, phone)
+insert into ADDRESS(address_id, address, phone)
 values (8, '1566 Inegl Manor', 70581400);
-insert into Addresses(address_id, address, phone)
+insert into ADDRESS(address_id, address, phone)
 values (10, '1795 Santiago', 86045262);
-insert into Addresses(address_id, address, phone)
+insert into ADDRESS(address_id, address, phone)
 values (11, '900 Santiago', 16571220);
 
 
@@ -31,24 +31,25 @@ values (11, '900 Santiago', 16571220);
 -- 4. Address_Id: is Address table' primary key
 
 
-create table Customers
+create table CUSTOMER
 (
     Customer_id INTEGER primary key,
     FirstName   varchar(30) not null,
     LastName    varchar(30) not null,
-    address_id  Integer references Addresses (address_id)
+    address_id  Integer references ADDRESS (address_id)
 );
 
-insert into Customers(customer_id, firstname, lastname, address_id) values (1,'Mary', 'Smith', 5);
-insert into Customers(customer_id, firstname, lastname, address_id) values (2,'Patricia', 'Johnson', null);
-insert into Customers(customer_id, firstname, lastname, address_id) values (3,'Linda', 'Williams', 7);
-insert into Customers(customer_id, firstname, lastname, address_id) values (4,'Barbara', 'Jones', 8);
-insert into Customers(customer_id, firstname, lastname, address_id) values (5,'Elizabeth', 'Brown', null);
+insert into CUSTOMER(customer_id, firstname, lastname, address_id) values (1,'Mary', 'Smith', 5);
+insert into CUSTOMER(customer_id, firstname, lastname, address_id) values (2,'Patricia', 'Johnson', null);
+insert into CUSTOMER(customer_id, firstname, lastname, address_id) values (3,'Linda', 'Williams', 7);
+insert into CUSTOMER(customer_id, firstname, lastname, address_id) values (4,'Barbara', 'Jones', 8);
+insert into CUSTOMER(customer_id, firstname, lastname, address_id) values (5,'Elizabeth', 'Brown', null);
 
 commit work;
 
-select * from ADDRESSES;
-select * from Customers;
+select * from ADDRESS;
+select * from CUSTOMER;
+
 
 
 

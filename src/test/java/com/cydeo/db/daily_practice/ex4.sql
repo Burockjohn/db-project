@@ -28,12 +28,12 @@ select max(SALARY)
 from (select distinct SALARY from EMPLOYEES order by SALARY)
 where ROWNUM < 6;
 
--- 7. find the 7th maximum salary from the employees table (do not include duplicates)
+-- 7. find the 7th minimum salary from the employees table (do not include duplicates)
 select max(SALARY)
 from (select distinct SALARY from EMPLOYEES order by SALARY)
 where ROWNUM < 8;
 
--- 8. find the 10th maximum salary from the employees table (do not include duplicates)
+-- 8. find the 10th minimum salary from the employees table (do not include duplicates)
 select max(SALARY)
 from (select distinct SALARY from EMPLOYEES order by SALARY)
 where ROWNUM < 11;
