@@ -54,8 +54,8 @@ public class DBUtils {
      *         columns of data, only first column of the first row will be returned.
      *         The rest of the data will be ignored
      */
-    public static Object getCellValue(String query) { // ??
-        return getQueryResultList(query).get(0).get(0);
+    public static Object getCellValue(String query, int rowNum, int columnNum) { // ??
+        return getQueryResultList(query).get(rowNum-1).get(columnNum-1);
     }
     /**
      *

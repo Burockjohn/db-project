@@ -9,7 +9,7 @@ import java.util.Map;
 public class DBUtilPractice {
 
     @Test
-    public void test1(){
+    public void test1() {
 
         //create connection
         DBUtils.createConnection();
@@ -30,7 +30,7 @@ public class DBUtilPractice {
 
 
     @Test
-    public void test2(){
+    public void test2() {
         //create connection
         DBUtils.createConnection();
         String query = "SELECT first_name,last_name,salary,job_id\n" +
@@ -43,6 +43,17 @@ public class DBUtilPractice {
 
         //close the connection
         DBUtils.destroy();
+
+    }
+
+    @Test
+    public void test3() {
+        //create connection
+        DBUtils.createConnection();
+        String query = "select FIRST_NAME, LAST_NAME, SALARY\n" +
+                "from EMPLOYEES";
+
+        System.out.println(DBUtils.getCellValue(query, 16, 2));
 
     }
 
